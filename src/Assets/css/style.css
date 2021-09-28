@@ -1,0 +1,175 @@
+* {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .navbar {
+    background-color: hsl(204, 100%, 99%, 0.9);
+  }
+  
+  #daftar a {
+    color: rgb(238, 238, 238);
+    font-weight: bold;
+  }
+
+  #logo {
+    width:auto;
+    height:100px;
+  }
+  
+  .btn-primary {
+    background-color: #1756af;
+  
+    border-radius: 10px;
+  }
+  
+  .buttonMasuk {
+    color: 14375e;
+  }
+  
+  #hero {
+    left: 40px;
+  }
+  
+  .tagline  {
+    color: #14375e;
+  }
+  
+  .jumbotron {
+    padding: 0;
+    padding-top: 70px;
+    background-color: #bbdcf1;
+    background-image: linear-gradient(#ffffff, #bbdcf1);
+    border-radius: 0;
+  }
+  
+  #on-jumbotron{
+    animation: transitionIn 2s;
+  }
+  
+  @keyframes transitionIn {
+    from{
+      opacity: 0;
+      transform:translateY(100px);
+    }
+    to{
+      opacity: 1;
+      transform:translateY(0);
+    }
+  }
+  
+  #search-container {
+    width: 100%;
+  }
+  
+  #cari {
+    width: 50%;
+  }
+  
+  
+  
+  #white-title{
+    color: #ffffff;
+  }
+  
+  .artikel-tagline{
+  margin-left: 2% ;
+  }
+  
+  
+  .container-artikel{
+    background-color: #67ade7;
+    overflow: hidden;
+    
+  }
+  
+  #artikel{
+    background-color: #ffffff;
+    border-radius: 30px;
+    margin-bottom: 90px;
+  
+  }
+  .card-univ {
+    border-radius: 15px;
+  }
+  
+  .img-univ {
+    width: 130px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  
+  
+  .title-fitur {
+    margin-top: 20%;
+    color: #ffffff;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    font-weight: 500;
+  }
+  
+  .wrapper-fitur {
+    background-color: #17a2af;
+    padding-bottom: 80px;
+  }
+  
+  /* #fitur1 {
+    background: linear-gradient(
+        38deg,
+        rgba(43, 203, 205, 0.7) 0%,
+        rgba(84, 232, 176, 0.7) 46%,
+        rgba(130, 255, 65, 0.7) 100%
+      ),
+      url("../../assets/images/college1.jpg");
+  }
+  
+  #fitur2 {
+    background: rgb(238, 9, 121);
+    background: linear-gradient(
+        29deg,
+        rgba(244, 196, 243, 0.7) 0%,
+        rgba(252, 103, 250, 0.7) 100%
+      ),
+      url("../../assets/images/scholarship1.jpg");
+  }
+  
+  #fitur3 {
+    background: linear-gradient(
+        42deg,
+        rgba(15, 9, 124, 0.7) 0%,
+        rgba(73, 73, 213, 0.7) 35%,
+        rgba(0, 212, 255, 0.7) 100%
+      ),
+      url("../../assets/images/workshop1.jpg");
+  }
+  
+  #fitur4 {
+    background: rgb(238, 9, 121);
+    background: linear-gradient(
+        27deg,
+        rgba(238, 9, 121, 0.7) 0%,
+        rgba(255, 106, 0, 0.7) 100%
+      ),
+      url("../../assets/images/utbk1.jpg");
+  }
+  
+  #fitur5 {
+    background: rgb(238, 9, 121);
+    background: linear-gradient(
+        29deg,
+        rgba(252, 234, 187, 0.7) 0%,
+        rgba(248, 181, 0, 0.7) 100%
+      ),
+      url("../../assets/images/job1.jpg");
+  }
+  
+  #fitur6 {
+    background: rgb(238, 9, 121);
+    background: linear-gradient(
+        29deg,
+        rgba(44, 62, 80, 0.7) 0%,
+        rgba(253, 116, 108, 0.7) 100%
+      ),
+      url("../../assets/images/lomba1.jpg");
+  } */

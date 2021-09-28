@@ -1,12 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from './components/Home';
-import PersonList from './components/PersonList';
+import Home from './Views/Home';
 
 function App() {
   return (
     <div className="App">
-      {/* <PersonList/> */}
       <Home/>
     </div>
   );
