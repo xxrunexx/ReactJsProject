@@ -1,4 +1,6 @@
+// IMPORT MODULES
 import React from 'react'
+// IMPORT ASSETS
 import logo from '../Assets/img/logo.png'
 import '../Assets/css/style.css'
 
@@ -20,7 +22,7 @@ function Navbar() {
                     </li>
                     <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
+                        Fitur
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a className="dropdown-item" href="#">Cari Sekolah</a></li>
