@@ -1,5 +1,6 @@
 // IMPORT MODULES
 import React from 'react'
+import { Link } from 'react-router-dom'
 // IMPORT ASSETS
 import logo from '../Assets/img/logo.png'
 import '../Assets/css/style.css'
@@ -18,15 +19,15 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                    <a className="nav-link" aria-current="page" href="#">Beranda</a>
+                    <Link to="/" className="nav-link" aria-current="page">Beranda</Link>
                     </li>
                     <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Fitur
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a className="dropdown-item" href="#">Cari Sekolah</a></li>
-                        <li><a className="dropdown-item" href="#">Cari Event</a></li>
+                        <li><Link to="/" className="dropdown-item" href="#">Cari Sekolah</Link></li>
+                        <li><Link to="/cari-event" className="dropdown-item" href="#">Cari Event</Link></li>
                     </ul>
                     </li>
                     <li className="nav-item">
@@ -37,9 +38,10 @@ function Navbar() {
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
                     <li>
                         <div class="btn">
-                        <a class="nav-link" href="#"> <strong>Masuk</strong> </a>
+                        <Link to="/login" class="nav-link"><strong>Masuk</strong></Link>
                         </div>
                     </li>
+                    {/* SIGN UP FEATURE, ADDITIONAL FEATURE */}
                     <li>
                         <div class="btn btn-primary" id="daftar" >
                         <a class=" nav-link"  href="#">Daftar</a>

@@ -3,22 +3,22 @@ import React from 'react'
 const schoolData = [
     {
         id: 1,
-        name: MAN 19 Jakarta,
+        name: "MAN 19 Jakarta",
         img: ,
     },
     {
         id: 2,
-        name: SMAN 90 Jakarta,
+        name: "SMAN 90 Jakarta",
         img: ,
     },
     {
         id: 3,
-        name: MAN 4 Jakarta,
+        name: "MAN 4 Jakarta",
         img: ,
     },
     {
         id: 4,
-        name: SMAN 63 Jakarta,
+        name: "SMAN 63 Jakarta",
         img: ,
     },
 ]
