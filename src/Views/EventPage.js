@@ -12,7 +12,7 @@ import hero from '../Assets/img/event-header.jpg'
 
 function EventPage() {
     return (
-        <div>
+        <div style={{backgroundColor: "#bbdcf1",backgroundImage: "linear-gradient(#ffffff, #bbdcf1)"}}>
             <Navbar/>
             <img
             class="img-fluid"
@@ -23,9 +23,7 @@ function EventPage() {
             />
             <div>
                 <p style={{margin: "15px 0 15px 15px"}}>Event Saat Ini</p>
-                <div>
-
-                </div>
+                {/* Import EventCard from Components */}
             </div>
             <Footer/>
 

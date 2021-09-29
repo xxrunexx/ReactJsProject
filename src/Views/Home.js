@@ -6,6 +6,8 @@ import React, { useState, useEffect } from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import Feature from '../Components/Feature'
+import SchoolCard from '../Components/SchoolCard'
+
 
 // IMPORT ASSETS
 import '../Assets/css/style.css'
@@ -20,7 +22,7 @@ function Home() {
         const loadPosts = async () => {
         setLoading(true);
         const response = await axios.get(
-            "https://api-sekolah-indonesia.herokuapp.com/sekolah?page=1&perPage=5"
+            "https://api-sekolah-indonesia.herokuapp.com/sekolah/SMA?page=1&perPage=50"
         );
         setPosts(response.data.dataSekolah);
         console.log(response.data.dataSekolah);
@@ -64,13 +66,13 @@ function Home() {
                         placeholder="Cari informasi sekolah"
                         onChange={(e) => setSearchTitle(e.target.value)}
                         />
-                        <button
+                        {/* <button
                         className="btn btn-outline-secondary"
                         type="button"
                         id="button-addon2"
                         >
                         <i className="fa fa-search"></i>
-                        </button>
+                        </button> */}
                     </div>
                     {loading ? (
                             <h4>Loading ...</h4>
@@ -85,23 +87,26 @@ function Home() {
                                 return value;
                                 }
                             })
-                            .map((item) => 
+                            .map((item,idx) => 
                             <>
-                            <p key={item.id}>
+                            <p key={item.id} className="text-center">
                                 <a 
                                 className="btn btn-primary"
-                                id="data-card-title" 
+                                id="data-card-title"
+                                data-bs-toggle="collapse" 
                                 data-toggle="collapse" 
-                                href={`#${item.id}`}
+                                href={`#a${idx}`}
                                 role="button" 
                                 aria-expanded="false" 
                                 aria-controls={item.id}>
                                     {item.sekolah}
                                 </a>
                             </p>
-                                <div className="collapse" id={item.id}>
+                                <div className="collapse" id={`a${idx}`}>
                                 <div className="card card-body">
-                                    {item.alamat_jalan}
+                                    <p>Alamat : {item.alamat_jalan}</p>
+                                    <p>Kabupaten : {item.kabupaten_kota}</p>
+                                    <p>Kecamatan : {item.kecamatan}</p>
                                 </div>
                             </div>
                             </>)
@@ -132,9 +137,9 @@ function Home() {
                 </div>
             </div>
             <hr /> 
-            </div>
             {/* Import SchoolCard Component from Components */}
-            {/* <SchoolCard /> */}
+            <SchoolCard />
+            </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path
                     fill="#17a2af"

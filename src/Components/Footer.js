@@ -13,8 +13,8 @@ function Footer() {
         <div className="col-md-4 ">
             <span>Get connected with us on social networks:</span>
         </div>
-            <div className="col-md-8  ">
-            <div>
+            <div className="col-md-8">
+            <div className="pull-right">
                 <a href="" className="me-4 mr-3 ml-3 text-reset" style={{fontSize:"15px"}} >
                 <i className="fa fa-facebook"></i>
                 </a>

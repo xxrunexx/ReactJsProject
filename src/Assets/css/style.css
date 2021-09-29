@@ -26,6 +26,29 @@
   }
 
   /* END OF FOOTER */
+
+  /* SchoolCard Component */
+  #CardUniv {
+    background-color: #1756af;
+    color: #ffffff;
+    border-radius: 7px;
+  }
+  
+  #CardUniv:hover {
+    background-color: #1a4075;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  #love {
+    color: red;
+    box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 20px;
+  }
+  /* END OF SchoolCard Component */
   .btn-primary {
     background-color: #1756af;
   
