@@ -1,9 +1,11 @@
 import React from "react";
-import "./RegisterEventModal.module.css";
+import "./RegisterEventModal.css";
 
 function Modal({ setOpenModal }) {
   return (
-    <div className="modalBackground">
+    <div
+    style={{ zIndex: 1, position: "absolute" }}
+    className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
           <button
