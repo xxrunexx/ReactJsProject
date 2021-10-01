@@ -1,6 +1,6 @@
 // IMPORT MODULES
 import React, {useState} from 'react'
-
+import { useAuth0 } from '@auth0/auth0-react';
 
 // IMPORT COMPONENTS
 import Navbar from '../Components/Navbar'
@@ -15,39 +15,41 @@ import EventCard from '../Components/EventCard'
 
 function EventPage() {
     const [modalOpen, setModalOpen] = useState(false);
+    const { isAuthenticated } = useAuth0();
 
     return (
-        <div style={{backgroundColor: "#bbdcf1",backgroundImage: "linear-gradient(#ffffff, #bbdcf1)"}}>
-            <Navbar/>
-            <img
-            class="img-fluid"
-            id="event-page-img1"
-            src={hero}
-            width="400px "
-            alt=""
-            />
-            <div style={{margin: "15px 0 15px 15px"}}>
-                <p style={{ display: "inline-flex"}}>Event Saat Ini</p>
-                <div id="wrappermodal">
-                    <button 
-                    className="openModalBtn" 
-                    // className="pull-right openModalBtn" 
-                    // style={{marginRight: "20px"}}
-                    onClick={() => {
-                        setModalOpen(true);
-                        // event.preventDefault();
-                    }}>
-                        Create a New Event
-                    </button>
-                {modalOpen && <Modal setOpenModal={setModalOpen} />}
-                </div>
+        isAuthenticated && (
+            <div style={{backgroundColor: "#bbdcf1",backgroundImage: "linear-gradient(#ffffff, #bbdcf1)"}}>
+                <Navbar/>
+                <img
+                class="img-fluid"
+                id="event-page-img1"
+                src={hero}
+                width="400px "
+                alt=""
+                />
+                <div style={{margin: "15px 0 15px 15px"}}>
+                    <p style={{ display: "inline-flex"}}>Event Saat Ini</p>
+                    <div id="wrappermodal">
+                        <button 
+                        className="openModalBtn" 
+                        // className="pull-right openModalBtn" 
+                        // style={{marginRight: "20px"}}
+                        onClick={() => {
+                            setModalOpen(true);
+                        }}>
+                            Create a New Event
+                        </button>
+                    {modalOpen && <Modal setOpenModal={setModalOpen} />}
+                    </div>
 
-                {/* Import EventCard from Components */}
-                <EventCard/>
+                    {/* Import EventCard from Components */}
+                    <EventCard/>
+                </div>
+                <Footer/>
+            {/* Closing div tag for the first div tag, DO NOT DELETE */}
             </div>
-            <Footer/>
-        {/* Closing div tag for the first div tag, DO NOT DELETE */}
-        </div>
+        )
     )
 }
 

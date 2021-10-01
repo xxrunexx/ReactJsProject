@@ -1,6 +1,7 @@
 // IMPORT MODULES
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 
 // IMPORT COMPONENTS
 import LoginButton from './LoginButton'
@@ -11,6 +12,16 @@ import logo from '../Assets/img/logo.png'
 import '../Assets/css/style.css'
 
 function Navbar() {
+    const {isLoading} = useAuth0();
+
+    if(isLoading){
+        return(
+            <div>
+                Loading...
+            </div>
+        )
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,7 +56,7 @@ function Navbar() {
                         <div class="btn">
                         {/* <Link to="/login" class="nav-link"><strong>Masuk</strong></Link> */}
                         <LoginButton/>
-                        {/* <LogoutButton/> */}
+                        <LogoutButton/>
                         </div>
                     </li>
                     {/* SIGN UP FEATURE, ADDITIONAL FEATURE */}
