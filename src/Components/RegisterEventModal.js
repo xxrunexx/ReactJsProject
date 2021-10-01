@@ -14,13 +14,13 @@ function Modal({ setOpenModal }) {
             X
           </button>
         </div>
-        <div className="title">
+        <div className="modal-title">
           <h1>Are You Sure You Want to Continue?</h1>
         </div>
-        <div className="body">
+        <div className="modal-body">
           <p>The next page looks amazing. Hope you want to go there!</p>
         </div>
-        <div className="footer">
+        <div className="modal-footer">
           <button
             onClick={() => {
               setOpenModal(false);

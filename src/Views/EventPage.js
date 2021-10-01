@@ -29,14 +29,16 @@ function EventPage() {
             <div style={{margin: "15px 0 15px 15px"}}>
                 <p style={{ display: "inline-flex"}}>Event Saat Ini</p>
                 <div id="wrappermodal">
-                <button 
-                className="pull-right openModalBtn" 
-                style={{marginRight: "20px"}}
-                onClick={() => {
-                    setModalOpen(true);
-                }}>
-                    Create a New Event
-                </button>
+                    <button 
+                    className="openModalBtn" 
+                    // className="pull-right openModalBtn" 
+                    // style={{marginRight: "20px"}}
+                    onClick={() => {
+                        setModalOpen(true);
+                        // event.preventDefault();
+                    }}>
+                        Create a New Event
+                    </button>
                 {modalOpen && <Modal setOpenModal={setModalOpen} />}
                 </div>
 

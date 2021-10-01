@@ -25,7 +25,7 @@ function Feature() {
             <div className="col-md-6 px-0" key={index}>
                 <a href="#" style={{textDecoration: "none"}}>
                     <div className="card" style={{width: "100%"}} id="wrapperfitur">
-                        <div className="card-body fitur-body p-0 {card.style}">
+                        <div id={card.style} className="card-body fitur-body p-0">
                             <p className="card-text text-center title-fitur">{card.title}</p>                           
                             {console.log("isi title" , card.title )}
                         </div>

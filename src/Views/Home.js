@@ -103,12 +103,13 @@ function Home() {
                                 </a>
                             </p>
                                 <div className="collapse" id={`a${idx}`}>
-                                <div className="card card-body">
-                                    <p>NPSN : {item.npsn}</p>
-                                    <p>Alamat : {item.alamat_jalan}</p>
-                                    <p>Kecamatan : {item.kecamatan}</p>
-                                    <p>Kabupaten : {item.kabupaten_kota}</p>
-                                    <p>Provinsi : {item.propinsi}</p>
+                                <div className="card card-body" style={{maxWidth: "50%", margin: "0 auto"}}>
+                                    <p className="text-center"><strong>Detail Sekolah</strong></p>
+                                    <p><strong>NPSN</strong> : {item.npsn}</p>
+                                    <p><strong>Alamat</strong> : {item.alamat_jalan}</p>
+                                    <p><strong>Kecamatan</strong> : {item.kecamatan}</p>
+                                    <p><strong>Kabupaten</strong> : {item.kabupaten_kota}</p>
+                                    <p><strong>Provinsi</strong> : {item.propinsi}</p>
                                 </div>
                             </div>
                             </>)
@@ -170,13 +171,13 @@ function Home() {
             </svg>
             
             {/* ADDITIONAL WAVES FOR STYLING */}
-            {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path
                 fill="#67ade7"
                 fill-opacity="1"
                 d="M0,0L48,32C96,64,192,128,288,165.3C384,203,480,213,576,192C672,171,768,117,864,101.3C960,85,1056,107,1152,106.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             ></path>
-            </svg> */}
+            </svg>
 
         {/* Part of News API */}
         <div className="container-artikel">

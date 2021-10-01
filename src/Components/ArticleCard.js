@@ -22,7 +22,8 @@ function ArticleCard() {
 
     return (
         <div>
-            <div class="card card-article" style="width: 18rem;">
+            {/* id card article editable */}
+            <div class="card card-article" style="width: 18rem;" id="card-article">
             <img class="card-img-top img-artikel" src="https://placeimg.com/200/200/any?1" alt="Card image cap"/>
             <div class="card-body">
                 <p class="card-text" style="color:black">{data.title}</p>

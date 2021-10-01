@@ -1,6 +1,11 @@
 // IMPORT MODULES
 import React from 'react'
 import { Link } from 'react-router-dom'
+
+// IMPORT COMPONENTS
+import LoginButton from './LoginButton'
+import LogoutButton from './LogoutButton'
+
 // IMPORT ASSETS
 import logo from '../Assets/img/logo.png'
 import '../Assets/css/style.css'
@@ -38,7 +43,9 @@ function Navbar() {
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
                     <li>
                         <div class="btn">
-                        <Link to="/login" class="nav-link"><strong>Masuk</strong></Link>
+                        {/* <Link to="/login" class="nav-link"><strong>Masuk</strong></Link> */}
+                        <LoginButton/>
+                        {/* <LogoutButton/> */}
                         </div>
                     </li>
                     {/* SIGN UP FEATURE, ADDITIONAL FEATURE */}
