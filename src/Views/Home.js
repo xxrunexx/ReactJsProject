@@ -7,7 +7,7 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import Feature from '../Components/Feature'
 import SchoolCard from '../Components/SchoolCard'
-
+import LoadingSvg from '../Components/LoadingSvg'
 
 // IMPORT ASSETS
 import '../Assets/css/style.css'
@@ -75,7 +75,7 @@ function Home() {
                         </button> */}
                     </div>
                     {loading ? (
-                            <h4>Loading ...</h4>
+                            <LoadingSvg/>
                         ) : (
                             posts
                             .filter((value) => {
@@ -104,9 +104,11 @@ function Home() {
                             </p>
                                 <div className="collapse" id={`a${idx}`}>
                                 <div className="card card-body">
+                                    <p>NPSN : {item.npsn}</p>
                                     <p>Alamat : {item.alamat_jalan}</p>
-                                    <p>Kabupaten : {item.kabupaten_kota}</p>
                                     <p>Kecamatan : {item.kecamatan}</p>
+                                    <p>Kabupaten : {item.kabupaten_kota}</p>
+                                    <p>Provinsi : {item.propinsi}</p>
                                 </div>
                             </div>
                             </>)
@@ -155,7 +157,7 @@ function Home() {
                         <h2 id="white-title"><strong>Fitur </strong>Kampus Indonesia</h2>
                     </div>
                     </div>
-                    {/* <Feature/> */}
+                    <Feature/>
                     {/* Import Fitur Component from Components */}
                 </div>
             </div>
@@ -175,6 +177,42 @@ function Home() {
                 d="M0,0L48,32C96,64,192,128,288,165.3C384,203,480,213,576,192C672,171,768,117,864,101.3C960,85,1056,107,1152,106.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             ></path>
             </svg> */}
+
+        {/* Part of News API */}
+        <div className="container-artikel">
+            <div className="container py-3 shadow" id="artikel">
+                <div className="row">
+                <div className="col mb-3 border-bottom artikel-tagline">
+                    <h3 style={{color: "#14375e"}}><strong>Artikel</strong> Terbaru</h3>
+                    <h6 style={{color: "#14375e"}}>
+                    Jangan Sampai terlewat informasi terbaru kampus favoritmu
+                    </h6> 
+                    {/* <hr className="mr-4" /> */}
+                </div>
+                </div>
+                <div className="container">
+                {/* <carousel
+                    :nav="false"
+                    :items="4"
+                    :mouseDrag="true"
+                    :dots="true"
+                    :margin="-150"
+                    :responsive="{ 0: { items: 1, nav: false }, 600: { items: 3 } }
+                    >
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                </carousel> */}
+
+                
+                </div>
+            </div>
+            </div>
 
 
 

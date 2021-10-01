@@ -1,8 +1,4 @@
 import React from 'react'
-// import man19 from '../Assets/img/man19.png'
-// import sman63 from '../Assets/img/sman63.png'
-// import sman23 from '../Assets/img/sman23.png'
-// import sman1 from '../Assets/img/sman1.png'
 
 const schoolData = [
     {
@@ -35,7 +31,7 @@ function SchoolCard() {
     const renderCard = (card, index) => {
         return (
             <div className="col-md-3" key={index}>
-                <div className="card shadow card-univ pt-4 mb-2">
+                <div className="card shadow card-univ pt-4 mb-2" style={{height: "100%"}}>
                     <img src={card.img} className="card-img-top img-univ mx-auto" alt="Card image cap"/>
                 
             
