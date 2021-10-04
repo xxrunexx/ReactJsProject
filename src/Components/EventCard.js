@@ -1,5 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import React from 'react'
+import { Link } from 'react-router-dom';
 import LoadingSvg from './LoadingSvg'
 
 const GetAllData = gql`
@@ -76,17 +77,17 @@ function EventCard() {
 
   return (
     <div>
-      <div className="row my-4" style={{margin: "0 100px"}}>
+      <div className="row my-4" style={{margin: "0 100px", position: "relative"}}>
         {data?.list_event.map((v,i) => (
            <div className="col-md-4 mb-5" key={i}>
            <div className="card shadow mb-2" style={{height: "100%"}}>
-               <img src={v.url} className="card-img-top mx-auto" alt="Card image cap"/>
+               <img src={v.url} className="card-img-top mx-auto" alt="No image"/>
            <div className="card-body">
                <p className="card-title">{v.title}</p>
                <p style={{color: "#f05537"}}>{v.event_start}</p>
                <p style={{color: "#39364f"}}>{v.location}</p>
                <p>{v.organizer}</p>
-               <a href={v.link} target="_blank" className="btn" id="CardUniv">Lihat Detail</a>
+               <Link to={`/detail-event/${v.id}`} className="btn" id="CardUniv">Lihat Detail</Link>
            </div>
            </div>
        </div> 

@@ -10,10 +10,10 @@ function ArticleCard() {
         const loadPosts = async (type) => {
           setLoading(true);
           const response = await axios.get(
-            "https://berita-indo-api.vercel.app/v1/cnn-news/"
+            "https://berita-indo-api.vercel.app/v1/cnn-news/teknologi"
           );
           setPosts(response.data);
-          console.log(response.data);
+          console.log("Isi news API : ", response.data);
           setLoading(false);
         };
     
@@ -22,13 +22,32 @@ function ArticleCard() {
 
     return (
         <div>
-            {/* id card article editable */}
-            <div class="card card-article" style="width: 18rem;" id="card-article">
-            <img class="card-img-top img-artikel" src="https://placeimg.com/200/200/any?1" alt="Card image cap"/>
-            <div class="card-body">
-                <p class="card-text" style="color:black">{data.title}</p>
-            </div>
-            </div>
+          {
+            posts?.data.map((news) => {
+              return (
+                <div className="col-md-3">
+                <div className="card shadow pt-4 mb-2" style={{height: "360px"}}>
+                  <img
+                    // className="h-48 w-full object-cover"
+                    className="card-img-top"
+                    src={news.image.small}
+                    alt=""
+                  />
+                </div>
+                <div className="card-body">
+                    <a href={news.link} className="block mt-2">
+                      <h5 className="card-title">
+                        {news.title}
+                      </h5>
+                      <h6 className="">
+                        {news.contentSnippet}
+                      </h6>
+                    </a>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
     )
 }

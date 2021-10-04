@@ -32,6 +32,10 @@
     background-color: #1756af;
     color: #ffffff;
     border-radius: 7px;
+    position: absolute;
+    margin: 5px;
+    bottom: 0px;
+    right: 5px;
   }
   
   #CardUniv:hover {
@@ -170,19 +174,19 @@
     cursor: pointer;
   }
 
-  .modalBackground {
+  /* .modalBackground {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(200, 200, 200);
+    background-color:
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+   */
   .modalContainer {
     width: 500px;
-    height: 500px;
+    height: 1000px;
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -322,3 +326,15 @@
 }
 
 /* END OF ARTICLECARD COMPONENT */
+
+/* REGISTER EVENT PAGE */
+.col-form{
+  padding-top: 50px;
+  color: #19345E;
+}
+
+.form-wrapper{
+  padding: 20px 50px;
+}
+
+/* END OF REGISTER EVENT PAGE */

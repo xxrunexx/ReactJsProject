@@ -50,21 +50,20 @@ function Navbar() {
                     <a className="nav-link" aria-current="page" href="#">Hubungi Kami</a>
                     </li>
                 </ul>
-                <nav class="ml-auto">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+                <nav className="ml-auto">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
                     <li>
-                        <div class="btn">
-                        {/* <Link to="/login" class="nav-link"><strong>Masuk</strong></Link> */}
+                        <div className="btn">
+                        {/* <Link to="/login" className="nav-link"><strong>Masuk</strong></Link> */}
                         <LoginButton/>
                         <LogoutButton/>
                         </div>
                     </li>
                     {/* SIGN UP FEATURE, ADDITIONAL FEATURE */}
                     <li>
-                        <div class="btn btn-primary" id="daftar" >
-                        <a class=" nav-link"  href="#">Daftar</a>
+                        <div className="btn btn-primary" id="daftar" >
+                        <a className=" nav-link"  href="#">Daftar</a>
                         </div>
-                        
                     </li>
                     </ul>
                 </nav>

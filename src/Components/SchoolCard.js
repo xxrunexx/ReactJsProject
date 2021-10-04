@@ -31,7 +31,7 @@ function SchoolCard() {
     const renderCard = (card, index) => {
         return (
             <div className="col-md-3" key={index}>
-                <div className="card shadow card-univ pt-4 mb-2" style={{height: "100%"}}>
+                <div className="card shadow card-univ pt-4 mb-2" style={{height: "300px"}}>
                     <img src={card.img} className="card-img-top img-univ mx-auto" alt="Card image cap"/>
                 
             

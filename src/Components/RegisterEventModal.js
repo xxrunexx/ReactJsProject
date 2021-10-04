@@ -1,5 +1,4 @@
 import React from "react";
-import "./RegisterEventModal.css";
 
 function Modal({ setOpenModal }) {
   return (
@@ -17,10 +16,28 @@ function Modal({ setOpenModal }) {
           </button>
         </div>
         <div className="modal-title">
-          <h1>Are You Sure You Want to Continue?</h1>
+          <h4>Create a New Event</h4>
         </div>
         <div className="modal-body">
-          <p>The next page looks amazing. Hope you want to go there!</p>
+          <form>
+            <div>
+              <label>Title</label>
+              <input type="text"></input>
+            </div>
+            <div>
+              <label>Organizer</label>
+              <input type="text"></input>
+            </div>
+            <div>
+              <label>Date and Time</label>
+              <input type="text"></input>
+            </div>
+            <div>
+              <label>Event Image</label>
+              <input type="file"></input>
+            </div>
+
+          </form>
         </div>
         <div className="modal-footer">
           <button

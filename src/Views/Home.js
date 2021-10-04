@@ -7,7 +7,9 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import Feature from '../Components/Feature'
 import SchoolCard from '../Components/SchoolCard'
+import ArticleCard from "../Components/ArticleCard";
 import LoadingSvg from '../Components/LoadingSvg'
+// import ArticleCard from '../Component/ArticleCard'
 
 // IMPORT ASSETS
 import '../Assets/css/style.css'
@@ -186,12 +188,13 @@ function Home() {
                 <div className="col mb-3 border-bottom artikel-tagline">
                     <h3 style={{color: "#14375e"}}><strong>Artikel</strong> Terbaru</h3>
                     <h6 style={{color: "#14375e"}}>
-                    Jangan Sampai terlewat informasi terbaru kampus favoritmu
+                    Jangan Sampai Terlewat Berita Pendidikan Terbaru Hari Ini!
                     </h6> 
                     {/* <hr className="mr-4" /> */}
                 </div>
                 </div>
                 <div className="container">
+                    {/* <ArticleCard/> */}
                 {/* <carousel
                     :nav="false"
                     :items="4"
