@@ -338,3 +338,9 @@
 }
 
 /* END OF REGISTER EVENT PAGE */
+
+.errMsg {
+  color: red;
+  font-size: 13px;
+  font-style: italic;
+}
