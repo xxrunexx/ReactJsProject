@@ -1,7 +1,7 @@
 * {
     font-family: "Montserrat", sans-serif;
   }
-  
+  /* NAVBAR */
   .navbar {
     background-color: hsl(204, 100%, 99%, 0.9);
   }
@@ -15,7 +15,44 @@
     width:auto;
     height:100px;
   }
+  /* END OF NAVBAR */
+  /* FOOTER */
+  #desc-footer {
+    text-align: left;
+  }
   
+  footer {
+    background-color: #14375e;
+  }
+
+  /* END OF FOOTER */
+
+  /* SchoolCard Component */
+  #CardUniv {
+    background-color: #1756af;
+    color: #ffffff;
+    border-radius: 7px;
+    position: absolute;
+    margin: 5px;
+    bottom: 0px;
+    right: 5px;
+  }
+  
+  #CardUniv:hover {
+    background-color: #1a4075;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  #love {
+    color: red;
+    box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 20px;
+  }
+  /* END OF SchoolCard Component */
   .btn-primary {
     background-color: #1756af;
   
@@ -113,15 +150,119 @@
     background-color: #17a2af;
     padding-bottom: 80px;
   }
+
+  /* EVENT PAGE & REGISTER EVENT MODAL COMPONENT*/
+  #event-page-img1{
+    width:100%;
+    height: 433px;
+  }
+  #wrappermodal {
+    width: 100vw;
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
   
-  /* #fitur1 {
+  #wrappermodal .openModalBtn {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* .modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color:
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+   */
+  .modalContainer {
+    width: 500px;
+    height: 1000px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .modalContainer .modal-title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .modal-body {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  
+  .modalContainer .modal-footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer .modal-footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    background-color: crimson;
+  }
+  
+  /* body {
+    padding: 0;
+    margin: 0;
+  } */
+
+  /* END OF EVENT PAGE & REGISTER EVENT MODAL COMPONENT */
+
+
+  /* FEATURE COMPONENT */
+  #fitur1 {
     background: linear-gradient(
         38deg,
         rgba(43, 203, 205, 0.7) 0%,
         rgba(84, 232, 176, 0.7) 46%,
         rgba(130, 255, 65, 0.7) 100%
       ),
-      url("../../assets/images/college1.jpg");
+      url("../img/search-news.jpg");
+      background-size:contain;
   }
   
   #fitur2 {
@@ -131,7 +272,7 @@
         rgba(244, 196, 243, 0.7) 0%,
         rgba(252, 103, 250, 0.7) 100%
       ),
-      url("../../assets/images/scholarship1.jpg");
+      url("../img/workshop1.jpg");
   }
   
   #fitur3 {
@@ -141,35 +282,59 @@
         rgba(73, 73, 213, 0.7) 35%,
         rgba(0, 212, 255, 0.7) 100%
       ),
-      url("../../assets/images/workshop1.jpg");
+      url("../img/search-school.jpg");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+
+  }
+
+  .fitur {
+    max-width: 100%;
+    border: none;
+  
+    object-fit: cover;
+    /* object-fit:scale-down; */
   }
   
-  #fitur4 {
-    background: rgb(238, 9, 121);
-    background: linear-gradient(
-        27deg,
-        rgba(238, 9, 121, 0.7) 0%,
-        rgba(255, 106, 0, 0.7) 100%
-      ),
-      url("../../assets/images/utbk1.jpg");
+  #wrapperfitur {
+    border: none;
+    border-radius: 0;
   }
   
-  #fitur5 {
-    background: rgb(238, 9, 121);
-    background: linear-gradient(
-        29deg,
-        rgba(252, 234, 187, 0.7) 0%,
-        rgba(248, 181, 0, 0.7) 100%
-      ),
-      url("../../assets/images/job1.jpg");
+  .fitur-body {
+    height: 300px;
+    transition: 0.3s;
   }
   
-  #fitur6 {
-    background: rgb(238, 9, 121);
-    background: linear-gradient(
-        29deg,
-        rgba(44, 62, 80, 0.7) 0%,
-        rgba(253, 116, 108, 0.7) 100%
-      ),
-      url("../../assets/images/lomba1.jpg");
-  } */
+  .fitur-body:hover {
+    opacity: 0.9;
+    text-shadow: 3px 2px 6px rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+  }
+  
+  /* END OF FEATURE COMPONENT */
+
+/* ARTICLECARD COMPONENT */
+
+.img-artikel{
+  height: 200px;
+  object-fit: cover;
+}
+#card-article{
+  border: 2px solid black;
+}
+
+/* END OF ARTICLECARD COMPONENT */
+
+/* REGISTER EVENT PAGE */
+.col-form{
+  padding-top: 50px;
+  color: #19345E;
+}
+
+.form-wrapper{
+  padding: 20px 50px;
+}
+
+/* END OF REGISTER EVENT PAGE */

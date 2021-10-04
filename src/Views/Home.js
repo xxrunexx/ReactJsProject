@@ -4,6 +4,12 @@ import React, { useState, useEffect } from 'react'
 
 // IMPORT COMPONENTS
 import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
+import Feature from '../Components/Feature'
+import SchoolCard from '../Components/SchoolCard'
+import ArticleCard from "../Components/ArticleCard";
+import LoadingSvg from '../Components/LoadingSvg'
+// import ArticleCard from '../Component/ArticleCard'
 
 // IMPORT ASSETS
 import '../Assets/css/style.css'
@@ -18,7 +24,7 @@ function Home() {
         const loadPosts = async () => {
         setLoading(true);
         const response = await axios.get(
-            "https://api-sekolah-indonesia.herokuapp.com/sekolah?page=1&perPage=5"
+            "https://api-sekolah-indonesia.herokuapp.com/sekolah/SMA?page=1&perPage=50"
         );
         setPosts(response.data.dataSekolah);
         console.log(response.data.dataSekolah);
@@ -62,16 +68,16 @@ function Home() {
                         placeholder="Cari informasi sekolah"
                         onChange={(e) => setSearchTitle(e.target.value)}
                         />
-                        <button
+                        {/* <button
                         className="btn btn-outline-secondary"
                         type="button"
                         id="button-addon2"
                         >
                         <i className="fa fa-search"></i>
-                        </button>
+                        </button> */}
                     </div>
                     {loading ? (
-                            <h4>Loading ...</h4>
+                            <LoadingSvg/>
                         ) : (
                             posts
                             .filter((value) => {
@@ -83,22 +89,29 @@ function Home() {
                                 return value;
                                 }
                             })
-                            .map((item) => 
+                            .map((item,idx) => 
                             <>
-                            <p key={item.id}>
+                            <p key={item.id} className="text-center">
                                 <a 
-                                class="btn btn-primary" 
+                                className="btn btn-primary"
+                                id="data-card-title"
+                                data-bs-toggle="collapse" 
                                 data-toggle="collapse" 
-                                href={`#${item.id}`}
+                                href={`#a${idx}`}
                                 role="button" 
                                 aria-expanded="false" 
                                 aria-controls={item.id}>
                                     {item.sekolah}
                                 </a>
                             </p>
-                                <div class="collapse" id={item.id}>
-                                <div class="card card-body">
-                                    {item.alamat_jalan}
+                                <div className="collapse" id={`a${idx}`}>
+                                <div className="card card-body" style={{maxWidth: "50%", margin: "0 auto"}}>
+                                    <p className="text-center"><strong>Detail Sekolah</strong></p>
+                                    <p><strong>NPSN</strong> : {item.npsn}</p>
+                                    <p><strong>Alamat</strong> : {item.alamat_jalan}</p>
+                                    <p><strong>Kecamatan</strong> : {item.kecamatan}</p>
+                                    <p><strong>Kabupaten</strong> : {item.kabupaten_kota}</p>
+                                    <p><strong>Provinsi</strong> : {item.propinsi}</p>
                                 </div>
                             </div>
                             </>)
@@ -118,7 +131,7 @@ function Home() {
                 </svg>
             </div>
 
-            {/* Component best of school */}
+            {/* Part of SchoolCard */}
             <div className="container text-center">
             <div className="row">
                 <div className="col text-center tagline">
@@ -129,8 +142,9 @@ function Home() {
                 </div>
             </div>
             <hr /> 
-            </div>
             {/* Import SchoolCard Component from Components */}
+            <SchoolCard />
+            </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path
                     fill="#17a2af"
@@ -138,9 +152,75 @@ function Home() {
                     d="M0,0L48,32C96,64,192,128,288,165.3C384,203,480,213,576,192C672,171,768,117,864,101.3C960,85,1056,107,1152,106.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
                     </path>
             </svg>
+            {/* Part of Fitur */}
+            <div className="wrapper-fitur">
+                <div className="container">
+                    <div className="row mb-4">
+                    <div className="col text-center">
+                        <h2 id="white-title"><strong>Fitur </strong>Kampus Indonesia</h2>
+                    </div>
+                    </div>
+                    <Feature/>
+                    {/* Import Fitur Component from Components */}
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path
+                fill="#17a2af"
+                fill-opacity="1"
+                d="M0,32L48,64C96,96,192,160,288,160C384,160,480,96,576,96C672,96,768,160,864,165.3C960,171,1056,117,1152,90.7C1248,64,1344,64,1392,64L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+            </path>
+            </svg>
             
-            
+            {/* ADDITIONAL WAVES FOR STYLING */}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path
+                fill="#67ade7"
+                fill-opacity="1"
+                d="M0,0L48,32C96,64,192,128,288,165.3C384,203,480,213,576,192C672,171,768,117,864,101.3C960,85,1056,107,1152,106.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+            </svg>
 
+        {/* Part of News API */}
+        <div className="container-artikel">
+            <div className="container py-3 shadow" id="artikel">
+                <div className="row">
+                <div className="col mb-3 border-bottom artikel-tagline">
+                    <h3 style={{color: "#14375e"}}><strong>Artikel</strong> Terbaru</h3>
+                    <h6 style={{color: "#14375e"}}>
+                    Jangan Sampai Terlewat Berita Pendidikan Terbaru Hari Ini!
+                    </h6> 
+                    {/* <hr className="mr-4" /> */}
+                </div>
+                </div>
+                <div className="container">
+                    {/* <ArticleCard/> */}
+                {/* <carousel
+                    :nav="false"
+                    :items="4"
+                    :mouseDrag="true"
+                    :dots="true"
+                    :margin="-150"
+                    :responsive="{ 0: { items: 1, nav: false }, 600: { items: 3 } }
+                    >
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                    <CardArtikel />
+                </carousel> */}
+
+                
+                </div>
+            </div>
+            </div>
+
+
+
+            <Footer/>
             {/* Closing div tag for the first div tag, DO NOT DELETE */}
         </div>
     )
