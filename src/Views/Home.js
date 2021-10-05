@@ -7,7 +7,6 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import Feature from '../Components/Feature'
 import SchoolCard from '../Components/SchoolCard'
-import ArticleCard from "../Components/ArticleCard";
 import LoadingSvg from '../Components/LoadingSvg'
 // import ArticleCard from '../Component/ArticleCard'
 
@@ -16,10 +15,16 @@ import '../Assets/css/style.css'
 import hero from '../Assets/img/hero.png'
 
 function Home() {
+    // UseState School API
     const [loading, setLoading] = useState(false);
     const [posts, setPosts] = useState([]);
     const [searchTitle, setSearchTitle] = useState("");
 
+    // UseState News API
+    const [loadingNews, setLoadingNews] = useState(true);
+    const [postsNews, setPostsNews] = useState([]);
+
+    // UseEffect School API
     useEffect(() => {
         const loadPosts = async () => {
         setLoading(true);
@@ -30,10 +35,26 @@ function Home() {
         console.log(response.data.dataSekolah);
         setLoading(false);
         };
-
         loadPosts();
     }, []);
 
+    // UseEffect News API
+    useEffect(() => {
+        setLoadingNews(true);
+        const loadData = async () => {
+          const response = await axios.get(
+            "https://berita-indo-api.vercel.app/v1/cnn-news/teknologi"
+          );
+          setPostsNews(response.data.data);
+          setLoadingNews(false);
+        };
+        loadData();
+      }, []);
+    
+      let slicedNews = postsNews?.slice(0,4);
+      console.log("Hasil Slice : ",slicedNews);
+
+    
     return (
         <div>
             {/* Import Navbar Component from Components */}
@@ -193,27 +214,38 @@ function Home() {
                     {/* <hr className="mr-4" /> */}
                 </div>
                 </div>
+                {/* Isi Artikel */}
                 <div className="container">
-                    {/* <ArticleCard/> */}
-                {/* <carousel
-                    :nav="false"
-                    :items="4"
-                    :mouseDrag="true"
-                    :dots="true"
-                    :margin="-150"
-                    :responsive="{ 0: { items: 1, nav: false }, 600: { items: 3 } }
-                    >
-                    <CardArtikel />
-                    <CardArtikel />
-                    <CardArtikel />
-                    <CardArtikel />
-                    <CardArtikel />
-                    <CardArtikel />
-                    <CardArtikel />
-                    <CardArtikel />
-                </carousel> */}
-
-                
+                {console.log("Ini di dalam return untuk map", slicedNews)}
+                <div style={{display: "inline-flex"}}>
+                    <div className="row my-4">
+                {!loading && slicedNews.map((news) => {
+                    return (
+                        <div className="col-md-3">
+                            <div className="card shadow mb-2" style={{height: "400px"}}>
+                            <img
+                                // className="h-48 w-full object-cover"
+                                className="card-img-top mx-auto"
+                                src={news.image.small}
+                                alt=""
+                            />     
+                            <div className="card-body">
+                                <a href={news.link} className="block mt-2">
+                                <h5 className="card-title">
+                                    {news.title}
+                                </h5>
+                                </a>
+                                <h6>
+                                    {news.contentSnippet}
+                                </h6>
+                            </div>
+                            </div>
+                        </div>
+                        );
+                    })
+                }
+                    </div>
+                </div>
                 </div>
             </div>
             </div>

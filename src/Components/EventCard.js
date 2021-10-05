@@ -1,4 +1,4 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useQuery, useSubscription } from '@apollo/client';
 import React from 'react'
 import { Link } from 'react-router-dom';
 import LoadingSvg from './LoadingSvg'
@@ -14,6 +14,20 @@ query MyQuery {
       id
     }
   }  
+`;
+
+const SubsData = gql`
+  subscription MySubscription {
+    list_event {
+      description
+      event_start
+      id
+      location
+      organizer
+      title
+      url
+    }
+  }
 `;
 
 // Used for test card style
@@ -62,8 +76,8 @@ query MyQuery {
 
 
 function EventCard() {
-  const {data, loading, error} = useQuery(GetAllData);
-  
+  // const {data, loading, error} = useQuery(GetAllData);
+  const {data, loading, error} = useSubscription(SubsData)
   if(loading){
     return <LoadingSvg/>
   }
@@ -83,10 +97,10 @@ function EventCard() {
            <div className="card shadow mb-2" style={{height: "100%"}}>
                <img src={v.url} className="card-img-top mx-auto" alt="No image"/>
            <div className="card-body">
-               <p className="card-title">{v.title}</p>
+               <p className="card-title" style={{color: "#39364f", fontSize: "larger"}}><strong>{v.title}</strong></p>
                <p style={{color: "#f05537"}}>{v.event_start}</p>
                <p style={{color: "#39364f"}}>{v.location}</p>
-               <p>{v.organizer}</p>
+               <p><strong>{v.organizer}</strong></p>
                <Link to={`/detail-event/${v.id}`} className="btn" id="CardUniv">Lihat Detail</Link>
            </div>
            </div>

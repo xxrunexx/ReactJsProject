@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const features = [
     // {
@@ -11,11 +12,13 @@ const features = [
         id: 2,
         style: "fitur2",
         title:"Event Seminar/Workshop",
+        target: "/cari-event",
     },
     {
         id: 3,
         style: "fitur3",
         title:"Cari Sekolah",
+        target: "/",
     },
 ]
 
@@ -26,7 +29,11 @@ function Feature() {
                 <a href="#" style={{textDecoration: "none"}}>
                     <div className="card" style={{width: "100%"}} id="wrapperfitur">
                         <div id={card.style} className="card-body fitur-body p-0">
-                            <p className="card-text text-center title-fitur">{card.title}</p>                           
+                            <Link to={card.target} style={{textDecoration: 'none'}}>
+                                <p className="card-text text-center title-fitur">
+                                    {card.title}
+                                </p>
+                            </Link>                        
                             {/* {console.log("isi title" , card.title )} */}
                         </div>
                     </div>
