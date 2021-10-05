@@ -344,3 +344,34 @@
   font-size: 13px;
   font-style: italic;
 }
+
+/* CONTACT PAGE */
+
+.contactme {
+  width: 100%;
+  background-image: url("http://www.mmasynergy.com/images/inner-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* margin-top: 5%; */
+}
+.contactOverlay {
+  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-color: rgba(0, 0, 0, 0.921);
+}
+.form-contact {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* END OF CONTACT PAGE */
