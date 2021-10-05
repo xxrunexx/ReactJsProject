@@ -61,7 +61,7 @@ function DetailEventPage() {
                                 <p>Organizer {v.organizer}</p>
                                 <p>Location : {v.location}</p>
                                 <p>Date : {v.event_start}</p>
-                                <p>Description : {v.description}</p>
+                                <p style={{whiteSpace: "pre-line"}}>Description : {v.description}</p>
                             </div>
                         ))}
                     

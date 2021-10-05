@@ -1,7 +1,7 @@
 // IMPORT MODULES
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import validator from "validator";
+import { useHistory } from 'react-router-dom'
 
 // IMPORT COMPONENTS
 import { app } from '../firebase/firebase';
@@ -45,6 +45,8 @@ function RegisterEvent() {
   const [errLocation, setErrLocation] = useState("");
   const [errDesc, setErrDesc] = useState("");
   const [errImg, setErrImg] = useState("");
+
+  const history = useHistory();
 
   const onChangeTitle = (e) => {
     if (e.target) {
@@ -136,7 +138,11 @@ function RegisterEvent() {
 
   // Handle Submit
   const resetData = () => {
-    setData(dataKosong);
+    setTitle("");
+    setOrganizer("");
+    setDate("");
+    setDesc("");
+    setLocation("");
     setErrTitle("");
     setErrOrganizer("");
     setErrDate("");
@@ -162,8 +168,10 @@ function RegisterEvent() {
           description: desc,
         }
       }})
+      resetData();
+      alert("Data Berhasil Tersimpan!");
+      // history.push('/cari-event');
     }//End of conditional statement
-    resetData();
   }
 
   // Handle onChange Upload
