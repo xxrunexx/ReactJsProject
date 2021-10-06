@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import emailjs from 'emailjs-com';
 
 // IMPORT STYLES
-import styles from './ContactComponent.module.css'
+import './styles.css'
 
 const Result = () => {
     return(
@@ -34,8 +34,8 @@ function ContactComponent(props) {
     }, 5000)
 
     return (
-        <form action="" ref={form} onSubmit={sendEmail}>
-            <div className={ styles.formWord }>
+        <form className="contact-form" action="" ref={form} onSubmit={sendEmail}>
+            <div className="formWord">
                 <span>Full Name</span>
                 <br/>
                 <input
@@ -64,7 +64,7 @@ function ContactComponent(props) {
                 />
                 <br/>
             </div>
-            <div className={ styles.formWord }>
+            <div className="formWord">
                 <span>Message</span>
                 <br/>
                 <textarea name="message" required></textarea>

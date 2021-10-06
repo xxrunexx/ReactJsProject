@@ -54,17 +54,18 @@ function Navbar() {
                 </ul>
                 <nav className="ml-auto">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
-                    <li>
+                    {/* <li>
                         <div className="btn">
-                        {/* <Link to="/login" className="nav-link"><strong>Masuk</strong></Link> */}
                         <LoginButton/>
                         <LogoutButton/>
                         </div>
-                    </li>
+                    </li> */}
                     {/* SIGN UP FEATURE, ADDITIONAL FEATURE */}
                     <li>
                         <div className="btn btn-primary" id="daftar" >
-                        <a className=" nav-link"  href="#">Daftar</a>
+                            <LoginButton/>
+                            <LogoutButton/>
+                        {/* <a className=" nav-link"  href="#">Daftar</a> */}
                         </div>
                     </li>
                     </ul>

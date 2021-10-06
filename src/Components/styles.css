@@ -1,4 +1,4 @@
-  form {
+  .contact-form {
     width: 80%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -10,7 +10,7 @@
     overflow: hidden;
     border-radius: 20px;
   }
-  form button {
+  .contact-form button {
     width: 190px;
     height: 55px;
     border: 0;
@@ -23,7 +23,7 @@
     font-weight: bold;
     margin-top: 20%;
   }
-  form button:hover {
+  .contact-form button:hover {
     background-color: unset;
     border: 2px solid #e49504;
     -webkit-transition: 0.5s linear;
@@ -31,6 +31,7 @@
     transition: 0.5s linear;
     color: black;
   }
+
   .formWord {
     width: 40%;
     padding: 4%;
