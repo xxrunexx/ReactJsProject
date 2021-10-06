@@ -57,11 +57,29 @@ function DetailEventPage() {
                     </div>      
                         {data?.list_event.map((v,i) => (
                             <div className="container" key={i}>
-                                <p>Title : {v.title}</p>
-                                <p>Organizer {v.organizer}</p>
-                                <p>Location : {v.location}</p>
-                                <p>Date : {v.event_start}</p>
-                                <p style={{whiteSpace: "pre-line"}}>Description : {v.description}</p>
+                                <img src={v.url} style={{width:"100%", marginBottom:"5%"}} />
+                                <p>Title : </p>
+                                {v.title}
+                                <p>
+                                    Organizer :
+                                    <br/>
+                                    {v.organizer}
+                                </p>
+                                <p>
+                                    Location : 
+                                    <br/>
+                                    {v.location}
+                                </p>
+                                <p>
+                                    Date : 
+                                    <br/>
+                                    {v.event_start}
+                                </p>
+                                <p style={{whiteSpace: "pre-line"}}>
+                                    Description : 
+                                    <br/>
+                                    {v.description}
+                                </p>
                             </div>
                         ))}
                     
