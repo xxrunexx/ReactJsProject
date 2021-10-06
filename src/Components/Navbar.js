@@ -27,7 +27,9 @@ function Navbar() {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
                 <a className="navbar-brand" href="#">
-                    <img src={logo} alt="Logo" id="logo"/>
+                    <Link to="/">
+                        <img src={logo} alt="Logo" id="logo"/>
+                    </Link>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -47,7 +49,7 @@ function Navbar() {
                     </ul>
                     </li>
                     <li className="nav-item">
-                    <a className="nav-link" aria-current="page" href="#">Hubungi Kami</a>
+                    <Link to="/contact" className="nav-link" aria-current="page">Hubungi Kami</Link>
                     </li>
                 </ul>
                 <nav className="ml-auto">
